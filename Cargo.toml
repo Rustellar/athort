@@ -1,0 +1,13 @@
+[workspace]
+members = [
+    "athort_json"
+, "athort_parquet", "athort_txt"]
+resolver = "2"
+
+[workspace.package]
+edition = "2024"
+authors = ["Yasu"]
+license = "Apache 2.0"
+version = "0.1.0"
+description = "Assortment of Parquet and other items"
+

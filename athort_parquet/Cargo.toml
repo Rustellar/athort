@@ -1,0 +1,9 @@
+[package]
+name = "athort_parquet"
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+version.workspace = true
+description.workspace = true
+
+[dependencies]
