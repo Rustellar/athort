@@ -7,3 +7,5 @@ version.workspace = true
 description.workspace = true
 
 [dependencies]
+arrow = { workspace = true }
+parquet = "56.2.0"

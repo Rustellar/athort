@@ -11,3 +11,5 @@ license = "Apache 2.0"
 version = "0.1.0"
 description = "Assortment of Parquet and other items"
 
+[workspace.dependencies]
+arrow = { version = "56.2.0" }
