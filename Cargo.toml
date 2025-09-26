@@ -3,7 +3,7 @@ name = "athort"
 version = "0.1.0"
 edition = "2024"
 authors = ["Yasu"]
-license = "Apache 2.0"
+license = "Apache-2.0"
 description = "Assortment of Parquet and other items"
 
 
