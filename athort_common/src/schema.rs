@@ -1,4 +1,4 @@
-use arrow::datatypes::{DataType};
+use arrow::datatypes::DataType;
 
 // Athortが提供するスキーマ
 pub struct AthortSchema {
@@ -14,7 +14,9 @@ pub struct Athorts {
 
 impl Athorts {
     pub fn new() -> Self {
-        Self { schemas: Vec::new() }
+        Self {
+            schemas: Vec::new(),
+        }
     }
 
     pub fn add_schema(&mut self, schema: AthortSchema) {
@@ -27,7 +29,8 @@ impl Athorts {
 
     // ArrowのSchemaに変換するメソッド
     pub fn to_arrow_schema(&self) -> arrow::datatypes::Schema {
-        let fields: Vec<arrow::datatypes::Field> = self.schemas.iter().map(|s| s.to_field()).collect();
+        let fields: Vec<arrow::datatypes::Field> =
+            self.schemas.iter().map(|s| s.to_field()).collect();
         arrow::datatypes::Schema::new(fields)
     }
 }
@@ -47,7 +50,6 @@ impl AthortSchema {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -60,20 +62,16 @@ mod tests {
         let athort_content = AthortSchema::new(String::from("content"), DataType::Utf8, false);
         let athort_page = AthortSchema::new(String::from("page"), DataType::UInt64, false);
 
-        let athort_to_arrow = Athorts::from_vec(vec![
-            athort_id,
-            athort_title,
-            athort_content,
-            athort_page,
-        ]);
+        let athort_to_arrow =
+            Athorts::from_vec(vec![athort_id, athort_title, athort_content, athort_page]);
 
         let athort_to_arrow = athort_to_arrow.to_arrow_schema();
 
         let arrow_schema = Schema::new(vec![
-        Field::new("id", DataType::UInt64, false),
-        Field::new("title", DataType::Utf8, false),
-        Field::new("content", DataType::Utf8, false),
-        Field::new("page", DataType::UInt64, false),
+            Field::new("id", DataType::UInt64, false),
+            Field::new("title", DataType::Utf8, false),
+            Field::new("content", DataType::Utf8, false),
+            Field::new("page", DataType::UInt64, false),
         ]);
 
         assert_eq!(athort_to_arrow, arrow_schema);
