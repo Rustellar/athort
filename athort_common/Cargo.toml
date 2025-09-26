@@ -1,5 +1,5 @@
 [package]
-name = "athort_txt"
+name = "athort_common"
 edition.workspace = true
 authors.workspace = true
 license.workspace = true
@@ -8,4 +8,4 @@ description.workspace = true
 
 [dependencies]
 arrow = { workspace = true }
-parquet = "56.2.0"
+parquet = { workspace = true }

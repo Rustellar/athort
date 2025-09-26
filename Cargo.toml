@@ -1,7 +1,7 @@
 [workspace]
-members = [
+members = [ "athort_common", "athort_csv",
     "athort_json"
-, "athort_parquet", "athort_txt"]
+, "athort_parquet"]
 resolver = "2"
 
 [workspace.package]
@@ -13,3 +13,4 @@ description = "Assortment of Parquet and other items"
 
 [workspace.dependencies]
 arrow = { version = "56.2.0" }
+parquet = { version = "56.2.0" }
