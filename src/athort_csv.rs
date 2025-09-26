@@ -1,8 +1,10 @@
 use std::{fs::File, sync::Arc};
 
 use arrow::csv;
-use athort_common::schema::Athorts;
 use parquet::arrow::ArrowWriter;
+
+use crate::schema::Athorts;
+
 
 pub struct CsvAthorts {}
 
